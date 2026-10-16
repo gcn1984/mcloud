@@ -124,6 +124,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          export IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
           echo "IMAGE=ghcr.io/${GITHUB_REPOSITORY,,}" >> "$GITHUB_ENV"   # ghcr 要求全小写
           if [[ "${GITHUB_REF_TYPE}" == "tag" ]]; then
             VERSION="${GITHUB_REF_NAME#v}"
