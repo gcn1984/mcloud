@@ -138,7 +138,7 @@ jobs:
           else
             echo "TAG=ci-${{ matrix.arch }}-${GITHUB_SHA:0:7}" >> "$GITHUB_ENV"
           fi
-          echo "本次：${IMAGE}:${VERSION}-${{ matrix.arch }}（平台 ${{ matrix.platform }}）"
+          echo "本次：ghcr.io/${GITHUB_REPOSITORY,,}:${TAG}（平台 ${{ matrix.platform }}）"
 
       - name: 登录 ghcr（仅 tag）
         if: github.ref_type == 'tag'
